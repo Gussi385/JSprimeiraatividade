@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>LISTA DE EXERCICIOS</title>
+  </head>
+  <body>
+    <header>
+      <h3>lista de exercicios</h3>
+      <h4>Nome: Miguel dos Santos Gussi</h4>
+      <ol>  <!--lista ordenada de links das atividades-->
+        <li><a href="index1.html"> exercicio 1</a></li>
+        <li><a href="index2.html"> exercicio 2</a></li>
+        <li><a href="index3.html"> exercicio 3</a></li>
+        <li><a href="index4.html"> exercicio 4</a></li>
+        <li><a href="index5.html"> exercicio 5</a></li>
+      </ol>
+    </header>
+
+    <main> 
+      <label for="salario"> Salário:</label>   <!--entradas-->
+      <input type="text" name="salario" id="salario">
+
+      <label for=""> Porcentual do aumento:</label>
+      <input type="text" name="porAumento" id="porAumento" onblur="calcular()">  <!--entradas-->
+      <button onclick="calcular()">Calcular</button>
+      <button onclick="limpar()">Limpar</button>
+      <p id="novoSal"> Novo salário: </p>
+    </main>
+
+    <script>
+      function calcular(){
+        var salario = Number(document.getElementById("salario").value);
+        var porAumento = Number(document.getElementById("porAumento").value);
+        var novoSal = salario + (salario * (porAumento/100));
+        document.getElementById("novoSal").innerHTML += novoSal;
+      }
+
+      function limpar(){
+       document.getElementById("novoSal").innerHTML="Novo salário: "
+       document.getElementById("salario").value = ""
+       document.getElementById("porAumento").value = ""
+      }
+    </script>
+  </body>
+</html>
