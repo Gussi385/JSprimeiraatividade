@@ -2,3 +2,18 @@ ol li{
     display: inline;
     margin: 0px 10px;
 }
+body{
+    background-color: #BFBFBF;
+}
+button{
+    border: solid 2px black;
+    border-radius: 7px;
+    font-family: courier prime;
+}
+input{
+    border: solid 1px black;
+    border-radius: 7px;
+}
+html{
+    font-family: courier prime;
+}

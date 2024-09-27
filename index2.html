@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <title>LISTA DE EXERCICIOS</title>
   </head>
   <body>
@@ -16,31 +22,33 @@
         <li><a href="index3.html"> exercicio 3</a></li>
         <li><a href="index4.html"> exercicio 4</a></li>
         <li><a href="index5.html"> exercicio 5</a></li>
+        <li><a href="index6.html"> exercicio 6</a></li>
+        <li><a href="index7.html"> exercicio 7</a></li>
       </ol>
     </header>
     <main>
       <label for="text">Altura: </label>
-      <input type="text" name="altura" id="altura">
+      <input type="text" name="altura" id="altura" />
       <label for="text">Base:</label>
-      <input type="text" name="base" id="base">
+      <input type="text" name="base" id="base" />
       <label for="text">Area: </label>
-      <input type="text" name="area" id="area" readonly>
+      <input type="text" name="area" id="area" readonly />
       <button onclick="calcular()">Calcular</button>
       <button onclick="limpar()">Limpar</button>
     </main>
     <script>
-     function calcular(){
+      function calcular() {
         var base = Number(document.getElementById("base").value);
-        var altura = Number(document.getElementById("altura").value);     
-        var area = ((base * altura) / 2 );
+        var altura = Number(document.getElementById("altura").value);
+        var area = (base * altura) / 2;
         document.getElementById("area").value = area;
       }
 
-      function limpar(){
-       document.getElementById("base").value = ""
-       document.getElementById("altura").value = ""
-       document.getElementById("area").value = ""
-      } 
+      function limpar() {
+        document.getElementById("base").value = "";
+        document.getElementById("altura").value = "";
+        document.getElementById("area").value = "";
+      }
     </script>
   </body>
 </html>

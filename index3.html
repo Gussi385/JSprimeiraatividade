@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <title>LISTA DE EXERCICIOS</title>
   </head>
   <body>
@@ -16,8 +22,38 @@
         <li><a href="index3.html"> exercicio 3</a></li>
         <li><a href="index4.html"> exercicio 4</a></li>
         <li><a href="index5.html"> exercicio 5</a></li>
+        <li><a href="index6.html"> exercicio 6</a></li>
+        <li><a href="index7.html"> exercicio 7</a></li>
       </ol>
     </header>
-    <main></main>
+    <main>
+      <label for="text">Nota 1:</label>
+      <input type="text" name="primeiranota" id="primeiranota" />
+      <br />
+      <label for="text">Nota 2:</label>
+      <input type="text" name="segundanota" id="segundanota" />
+      <button onclick="calcularmedia()">Calcular</button>
+      <button onclick="limpar()">Limpar</button>
+      <br />
+      <label for="text" id="media">Média:</label>
+    </main>
+
+    <script>
+      function calcularmedia() {
+        var primeiranota = Number(
+          document.getElementById("primeiranota").value
+        );
+        var segundanota = Number(document.getElementById("segundanota").value);
+        var resultado = primeiranota * 0.3 + segundanota * 0.7;
+
+        document.getElementById("media").innerText += resultado;
+      }
+
+      function limpar() {
+        document.getElementById("primeiranota").value = "";
+        document.getElementById("segundanota").value = "";
+        document.getElementById("media").innerHTML = "Média:";
+      }
+    </script>
   </body>
 </html>

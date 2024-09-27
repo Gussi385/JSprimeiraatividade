@@ -27,31 +27,40 @@
       </ol>
     </header>
     <main>
-      <label for="text">Distância (Km)</label>
-      <input type="text" name="distancia" id="distancia" /><br />
+      <label for="text">Valor por hora trabalhada:</label>
+      <input type="text" name="valorhora" id="valorhora" />
 
-      <label for="text">Volume (litros)</label>
-      <input type="text" name="volume" id="volume" />
+      <label for="text">Quantidade de refeições:</label>
+      <input type="text" name="refeicao" id="refeicao" />
 
       <button onclick="calcular()">Calcular</button>
       <button onclick="limpar()">Limpar</button><br />
 
-      <label for="texy">Consumo Médio</label>
-      <input type="text" name="consumo" id="consumo" readonly />
+      <label for="text" id="bruto">Salário bruto: </label><br />
+      <label for="text" id="desrefeicao">Desconto da refeição: </label><br />
+      <label for="text" id="liquido">Salário líquido (62 Hrs): </label>
     </main>
 
     <script>
       function calcular() {
-        var distancia = Number(document.getElementById("distancia").value);
-        var volume = Number(document.getElementById("volume").value);
-        var consumo = distancia / volume;
-
-        document.getElementById("consumo").value = consumo;
+        var valorhora = Number(document.getElementById("valorhora").value);
+        var refeicao = Number(document.getElementById("refeicao").value);
+        var bruto = 40 * valorhora + 22 * (3 * valorhora);
+        document.getElementById("bruto").innerText += bruto;
+        var desconto = refeicao * 1.5;
+        document.getElementById("desrefeicao").innerText += desconto;
+        var liquido = bruto - desconto;
+        document.getElementById("liquido").innerText += liquido;
       }
+
       function limpar() {
-        document.getElementById("consumo").value = "";
-        document.getElementById("distancia").value = "";
-        document.getElementById("volume").value = "";
+        document.getElementById("valorhora").value = "";
+        document.getElementById("refeicao").value = "";
+        document.getElementById("bruto").innerText = "Salário bruto: ";
+        document.getElementById("desrefeicao").innerText =
+          "Desconto da refeição: ";
+        document.getElementById("liquido").innerText =
+          "Salário líquido (62 Hrs):";
       }
     </script>
   </body>

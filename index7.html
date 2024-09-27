@@ -27,30 +27,18 @@
       </ol>
     </header>
     <main>
-      <label for="text">Ano de Nascimento:</label>
-      <input type="text" name="anonascimento" id="anonascimento" />
-      <button onclick="calcular()">Calcular</button>
+      <label for="text">Número gerado:</label>
+      <input type="text" name="gerado" id="gerado" readonly />
+      <button onclick="gerar()">Gerar</button>
+      <input type="text" name="numero" id="numero" readonly />
     </main>
 
     <script>
-      function calcular() {
-        var anonascimento = Number(
-          document.getElementById("anonascimento").value
-        );
-        var idade = 2024 - anonascimento;
-        var meses = idade * 12;
-        var semanas = idade * 52;
-        var dias = idade * 365;
-        var horas = idade * 8760;
-        var minutos = idade * 525.6;
-        var v2050 = idade + 26;
-        console.log("idade:" + idade);
-        console.log("meses:" + meses);
-        console.log("semanas:" + semanas);
-        console.log("dias:" + dias);
-        console.log("horas:" + horas);
-        console.log("minutos:" + minutos);
-        console.log("idade em 2050:" + v2050);
+      function gerar() {
+        const randomico = Math.floor(100 * Math.random());
+        const ParImpar = randomico % 2 == 0 ? "par" : "impar";
+        document.getElementById("gerado").value = randomico;
+        document.getElementById("numero").value = ` Numero é ${ParImpar}`;
       }
     </script>
   </body>
